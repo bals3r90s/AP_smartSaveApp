@@ -11,6 +11,7 @@
     <color name="background_grey_300">#C9C9C9</color>
     <color name="background_grey_100">#C3C3C3</color>
     <color name="font_grey">#2A2A2A</color>
+    <color name="font_white">#FFFFFF</color>
     <color name="font_grey_light">#515151</color>
     <color name="font_purple">#3C3193</color>
     <color name="purple_200">#7167C5</color>

@@ -16,6 +16,6 @@ import com.example.smartsaveapp_dgit.ui.theme.SmartSaveApp_dgitTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.list_item_cash)
+        setContentView(R.layout.main_1)
     }
 }
