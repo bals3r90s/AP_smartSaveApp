@@ -7,7 +7,7 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label=""
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartSaveApp_dgit"
@@ -15,7 +15,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="@string/app_name"
+            android:label=""
             android:theme="@style/Theme.SmartSaveApp_dgit">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,59 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Act_1a"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_2"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_3"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_4"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_4a"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_5"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_6"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_7"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_8"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_9"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_10"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_11"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".Act_12"
+            android:theme="@style/Theme.AppCompat.Light" />
+
+
+        <activity
+            android:name=".DetailsActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".FragmentAuswahl"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".FragmentDetails"
+            android:theme="@style/Theme.AppCompat.Light" />
+        <activity
+            android:name=".FragmentMehrspaltigActivity"
+            android:theme="@style/Theme.AppCompat.Light" />
     </application>
 
 </manifest>
