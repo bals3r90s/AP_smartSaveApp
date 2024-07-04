@@ -25,19 +25,24 @@ class MainActivity : ComponentActivity() {
         sparzielButton_4 = findViewById<Button>(R.id.button_Sparziel)
         addButton = findViewById<Button>(R.id.buttonAdd)
 
-        // Datenquelle für das ListView
-        val items = listOf("Element 1", "Element 2", "Element 3", "Element 4", "Element 5")
+        val items = listOf(
+            ItemData(" Auto", "37 %", R.drawable.schwein),
+            ItemData("Urlaub", "50 %", R.drawable.schwein),
+            ItemData("Möbel", "75 %", R.drawable.schwein),
+            ItemData("Telefon", "20 %", R.drawable.schwein),
+            ItemData("Motorrad", "90 %", R.drawable.schwein),
+            ItemData("Wohnung", "42 %", R.drawable.schwein)
+
+        )
 
         // Zugriff auf das ListView-Element
         val listView: ListView = findViewById(R.id.listView)
 
-        // Erstellung des Adapters
-        val adapter = ArrayAdapter(this, R.layout.list_item_main, R.id.textView, items)
+        // Erstellung des benutzerdefinierten Adapters
+        val adapter = ListItemAdapter(this, items)
 
         // Zuweisung des Adapters zum ListView
         listView.adapter = adapter
-
-
 
 
 /*
