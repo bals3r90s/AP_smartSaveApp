@@ -6,14 +6,13 @@ import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.ListView
+import android.widget.TextView
 import androidx.activity.ComponentActivity
 
 
 class MainActivity : ComponentActivity() {
 
-    lateinit var gui3: Button
-    lateinit var gui4: Button
-    lateinit var gui5: Button
+    lateinit var kontoButton: TextView
     lateinit var addButton: Button
     lateinit var sparzielButton_4: Button
 
@@ -22,6 +21,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main)
 
+        kontoButton = findViewById<TextView>(R.id.textView17)
         sparzielButton_4 = findViewById<Button>(R.id.button_Sparziel)
         addButton = findViewById<Button>(R.id.buttonAdd)
 
@@ -45,29 +45,15 @@ class MainActivity : ComponentActivity() {
         listView.adapter = adapter
 
 
-/*
 
-        gui3.setOnClickListener(object : View.OnClickListener {
+        kontoButton.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {
-                val intent = Intent(applicationContext, Act_3::class.java)
-                startActivity(intent)
-            }
-        })
-        gui4.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                val intent = Intent(applicationContext, Act_4::class.java)
-                startActivity(intent)
-            }
-        })
-        gui5.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                val intent = Intent(applicationContext, Act_11::class.java)
+                val intent = Intent(applicationContext, Act_2::class.java)
                 startActivity(intent)
             }
         })
 
 
- */
 
         sparzielButton_4.setOnClickListener(object : View.OnClickListener {
             override fun onClick(view: View?) {

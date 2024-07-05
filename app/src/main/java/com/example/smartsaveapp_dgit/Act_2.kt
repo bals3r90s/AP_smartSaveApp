@@ -19,19 +19,6 @@ class Act_2 : AppCompatActivity() {
         setContentView(R.layout.gui_2)
 
 
-        spinner1 = findViewById(R.id.spinner1)
-        spinner2 = findViewById(R.id.spinner2)
-
-        val options = listOf("Option 1", "Option 2", "Option 3", "Option 4")
-
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        spinner1.adapter = adapter
-        spinner2.adapter = adapter
-
-
-
-
 
         val btn_abbrechen = findViewById<Button>(R.id.cancelButton)
         btn_abbrechen.setOnClickListener(object : View.OnClickListener {
