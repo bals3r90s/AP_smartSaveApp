@@ -21,12 +21,15 @@ class Act_4 : AppCompatActivity() {
         spinner1 = findViewById(R.id.spinner1)
         spinner2 = findViewById(R.id.spinner2)
 
-        val options = listOf("Option 1", "Option 2", "Option 3", "Option 4")
+        val auszahlung = listOf("DE85 4567 2546 7894 1265 85", "DE76 7812 3654 7895 3467 78", "DE23 7465 4519 4567 1265 78", "DE14 4567 2546 7894 6497 29")
+        val zielkonto = listOf("DE14 4567 2546 7894 6497 29", "DE76 7812 3654 7895 3467 78")
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, options)
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, auszahlung)
+        val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_item, zielkonto)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spinner1.adapter = adapter
-        spinner2.adapter = adapter
+        spinner2.adapter = adapter2
 
 
 

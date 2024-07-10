@@ -16,7 +16,7 @@ class Act_2 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.gui_2)
+        setContentView(R.layout.gui_3)
 
 
 
