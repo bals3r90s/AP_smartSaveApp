@@ -64,6 +64,7 @@
             android:theme="@style/Theme.AppCompat.Light" />
 
 
+
         <activity
             android:name=".DetailsActivity"
             android:theme="@style/Theme.AppCompat.Light" />

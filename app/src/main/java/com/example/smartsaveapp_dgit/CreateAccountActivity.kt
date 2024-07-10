@@ -1,8 +1,6 @@
 package com.example.smartsaveapp_dgit
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -12,7 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class Act_7 : AppCompatActivity() {
+class CreateAccountActivity : AppCompatActivity() {
 
     private lateinit var kontoNrEditText: EditText
     private lateinit var blzEditText: EditText
@@ -23,14 +21,12 @@ class Act_7 : AppCompatActivity() {
     private lateinit var checkSparkonto: CheckBox
     private lateinit var checkKreditkarte: CheckBox
     private lateinit var speichernButton: Button
-    private lateinit var abbrechenButton: Button
     private lateinit var database: AppDatabase
     private val uiScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.gui_7) // Dein bestehendes Layout
-
+        setContentView(R.layout.gui_7)
         kontoNrEditText = findViewById(R.id.kontoNr)
         blzEditText = findViewById(R.id.blz)
         bicEditText = findViewById(R.id.bic)
@@ -40,7 +36,6 @@ class Act_7 : AppCompatActivity() {
         checkSparkonto = findViewById(R.id.checkSparkonto)
         checkKreditkarte = findViewById(R.id.checkKreditkarte)
         speichernButton = findViewById(R.id.saveButton)
-        abbrechenButton = findViewById(R.id.cancelButton)
 
         database = Room.databaseBuilder(
             applicationContext,
@@ -73,10 +68,6 @@ class Act_7 : AppCompatActivity() {
                 database.accountDao().insert(account)
                 finish()
             }
-        }
-
-        abbrechenButton.setOnClickListener {
-            finish()
         }
     }
 }
