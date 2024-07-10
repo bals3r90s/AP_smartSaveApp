@@ -103,8 +103,8 @@
 
     <Button
         android:id="@+id/saveButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="145dp"
+        android:layout_height="79dp"
         android:background="@drawable/button_background"
         android:text="Speichern"
         android:textColor="@android:color/white"
@@ -118,10 +118,10 @@
 
     <Button
         android:id="@+id/cancelButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="72dp"
+        android:layout_width="151dp"
+        android:layout_height="79dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="36dp"
         android:background="@drawable/button_bg_cancel"
         android:text="Abbrechen"
         android:textColor="@android:color/white"

@@ -31,7 +31,9 @@ class MainActivity : ComponentActivity() {
             ItemData("Möbel", "75 %", R.drawable.schwein),
             ItemData("Telefon", "20 %", R.drawable.schwein),
             ItemData("Motorrad", "90 %", R.drawable.schwein),
-            ItemData("Wohnung", "42 %", R.drawable.schwein)
+            ItemData("Wohnung", "42 %", R.drawable.schwein),
+            ItemData("Boot", "13 %", R.drawable.schwein)
+
 
         )
 
