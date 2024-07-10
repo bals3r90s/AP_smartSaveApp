@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#E0E0E0"/> <!-- dunklere Farbe beim Drücken -->
+            <corners android:radius="8dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <gradient android:startColor="#2196F3" android:endColor="#011A39" android:angle="270"/> <!-- grüner Gradient -->
+            <corners android:radius="8dp"/>
+            <padding
+                android:left="16dp"
+                android:right="16dp"
+                android:top="12dp"
+                android:bottom="12dp"/> <!-- Innenabstand -->
+        </shape>
+    </item>
+</selector>
