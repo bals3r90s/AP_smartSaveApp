@@ -27,7 +27,7 @@ class Act_4 : AppCompatActivity() {
         spinner1 = findViewById(R.id.spinner1)
         spinner2 = findViewById(R.id.spinner2)
 
-        // Datenbank wird erstellt
+
         database = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java, "app_database"

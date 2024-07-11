@@ -31,7 +31,7 @@ class Act_7 : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.gui_7) // Dein bestehendes Layout
+        setContentView(R.layout.gui_7)
 
         kontoNrEditText = findViewById(R.id.kontoNr)
         blzEditText = findViewById(R.id.blz)
@@ -63,8 +63,6 @@ class Act_7 : AppCompatActivity() {
 
             }
 
-
-            // Validierung der Eingabefelder
             if (kontoNr.isNotEmpty() && blz.isNotEmpty() && bic.isNotEmpty() && iban.isNotEmpty() && kontotyp.isNotEmpty()) {
                 val account = Account(
                     kontoNr = kontoNr,
@@ -79,16 +77,34 @@ class Act_7 : AppCompatActivity() {
                     withContext(Dispatchers.IO) {
                         database.accountDao().insert(account)
                     }
+                    val intent = Intent(applicationContext, MainActivity::class.java)
+                    startActivity(intent)
                     finish()
                 }
             } else {
-                // Zeige eine Fehlermeldung an, falls ein Feld leer ist
                 Log.e("Act_7", "Fehler: Alle Felder müssen ausgefüllt werden.")
             }
         }
 
-        abbrechenButton.setOnClickListener {
+        checkBankkonto.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                checkSparkonto.isChecked = false
+                checkKreditkarte.isChecked = false
+            }
+        }
 
+        checkSparkonto.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                checkBankkonto.isChecked = false
+                checkKreditkarte.isChecked = false
+            }
+        }
+
+        checkKreditkarte.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                checkBankkonto.isChecked = false
+                checkSparkonto.isChecked = false
+            }
         }
 
         abbrechenButton.setOnClickListener(object : View.OnClickListener {
@@ -98,16 +114,5 @@ class Act_7 : AppCompatActivity() {
                 finish()
             }
         })
-
-        /*
-        speichernButton.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(view: View?) {
-                val intent = Intent(applicationContext, MainActivity::class.java)
-                startActivity(intent)
-            }
-        })
-
-         */
-
     }
 }
