@@ -6,12 +6,9 @@ import androidx.room.Query
 
 @Dao
 interface AccountDao {
+    @Query("SELECT * FROM account")
+    fun getAllAccounts(): List<Account>
+
     @Insert
-    suspend fun insert(account: Account)
-
-    @Query("SELECT * FROM account_table WHERE id = :id")
-    suspend fun getAccountById(id: Int): Account?
-
-    @Query("SELECT * FROM account_table")
-    suspend fun getAllAccounts(): List<Account>?
+    fun insert(account: Account)
 }

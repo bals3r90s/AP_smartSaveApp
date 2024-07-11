@@ -3,7 +3,7 @@ package com.example.smartsaveapp_dgit
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "account_table")
+@Entity(tableName = "account")
 data class Account(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val kontoNr: String,

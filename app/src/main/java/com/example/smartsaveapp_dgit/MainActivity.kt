@@ -3,7 +3,6 @@ package com.example.smartsaveapp_dgit
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
@@ -12,6 +11,7 @@ import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : ComponentActivity() {
 
@@ -78,7 +78,7 @@ class MainActivity : ComponentActivity() {
         Log.d("MainActivity", "loadAccounts aufgerufen")
         uiScope.launch {
             try {
-                val accounts = database.accountDao().getAllAccounts()
+                val accounts = withContext(Dispatchers.IO) { database.accountDao().getAllAccounts() }
                 // Hier kannst du die Konten auf irgendeine Weise anzeigen, z.B. in einem ListView oder Log
                 accounts?.let {
                     for (account in it) {

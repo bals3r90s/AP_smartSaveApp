@@ -2,7 +2,7 @@ package com.example.smartsaveapp_dgit
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -11,6 +11,7 @@ import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class Act_7 : AppCompatActivity() {
 
@@ -48,11 +49,11 @@ class Act_7 : AppCompatActivity() {
         ).build()
 
         speichernButton.setOnClickListener {
-            val kontoNr = kontoNrEditText.text.toString()
-            val blz = blzEditText.text.toString()
-            val bic = bicEditText.text.toString()
-            val iban = ibanEditText.text.toString()
-            val bemerkung = bemerkungEditText.text.toString()
+            val kontoNr = kontoNrEditText.text.toString().trim()
+            val blz = blzEditText.text.toString().trim()
+            val bic = bicEditText.text.toString().trim()
+            val iban = ibanEditText.text.toString().trim()
+            val bemerkung = bemerkungEditText.text.toString().trim()
             val kontotyp = when {
                 checkBankkonto.isChecked -> "Bankkonto"
                 checkSparkonto.isChecked -> "Sparkonto"
@@ -60,18 +61,26 @@ class Act_7 : AppCompatActivity() {
                 else -> ""
             }
 
-            val account = Account(
-                kontoNr = kontoNr,
-                blz = blz,
-                bic = bic,
-                iban = iban,
-                bemerkung = bemerkung,
-                kontotyp = kontotyp
-            )
+            // Validierung der Eingabefelder
+            if (kontoNr.isNotEmpty() && blz.isNotEmpty() && bic.isNotEmpty() && iban.isNotEmpty() && kontotyp.isNotEmpty()) {
+                val account = Account(
+                    kontoNr = kontoNr,
+                    blz = blz,
+                    bic = bic,
+                    iban = iban,
+                    bemerkung = bemerkung,
+                    kontotyp = kontotyp
+                )
 
-            uiScope.launch {
-                database.accountDao().insert(account)
-                finish()
+                uiScope.launch {
+                    withContext(Dispatchers.IO) {
+                        database.accountDao().insert(account)
+                    }
+                    finish()
+                }
+            } else {
+                // Zeige eine Fehlermeldung an, falls ein Feld leer ist
+                Log.e("Act_7", "Fehler: Alle Felder müssen ausgefüllt werden.")
             }
         }
 
