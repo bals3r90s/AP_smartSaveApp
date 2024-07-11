@@ -69,7 +69,7 @@ class MainActivity : ComponentActivity() {
         }
 
         addButton.setOnClickListener {
-            val intent = Intent(applicationContext, Act_7::class.java) // Startet die Act_7
+            val intent = Intent(applicationContext, Act_1a::class.java)
             startActivity(intent)
         }
     }

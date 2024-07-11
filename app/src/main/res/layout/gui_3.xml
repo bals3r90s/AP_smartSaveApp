@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Juli 2024"
-        android:textSize="24sp"
+        android:textSize="45sp"
         android:gravity="center"
         android:layout_gravity="center_horizontal" />
 
@@ -77,31 +77,31 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1.4"
-            android:background="#8B4513" />
+            android:background="#02A9F6" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.5"
-            android:background="#228B22" />
+            android:background="#0654F0" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="0.2"
-            android:background="#00008B" />
+            android:background="#010194" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#000000" />
+            android:background="#6F0E0E" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="#D3D3D3" />
+            android:background="#28782B" />
     </LinearLayout>
 
     <!-- Legende -->
@@ -120,7 +120,7 @@
             <View
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="#8B4513" />
+                android:background="#02A9F6" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -137,7 +137,7 @@
             <View
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="#228B22" />
+                android:background="#0654F0" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -154,7 +154,7 @@
             <View
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="#00008B" />
+                android:background="#010194" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
             <View
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="#000000" />
+                android:background="#6F0E0E" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -188,7 +188,7 @@
             <View
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:background="#D3D3D3" />
+                android:background="#28782B" />
 
             <TextView
                 android:layout_width="wrap_content"

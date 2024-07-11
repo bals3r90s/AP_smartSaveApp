@@ -3,6 +3,7 @@ package com.example.smartsaveapp_dgit
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -59,7 +60,9 @@ class Act_7 : AppCompatActivity() {
                 checkSparkonto.isChecked -> "Sparkonto"
                 checkKreditkarte.isChecked -> "Kreditkartenkonto"
                 else -> ""
+
             }
+
 
             // Validierung der Eingabefelder
             if (kontoNr.isNotEmpty() && blz.isNotEmpty() && bic.isNotEmpty() && iban.isNotEmpty() && kontotyp.isNotEmpty()) {
@@ -85,7 +88,26 @@ class Act_7 : AppCompatActivity() {
         }
 
         abbrechenButton.setOnClickListener {
-            finish()
+
         }
+
+        abbrechenButton.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View?) {
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+        })
+
+        /*
+        speichernButton.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View?) {
+                val intent = Intent(applicationContext, MainActivity::class.java)
+                startActivity(intent)
+            }
+        })
+
+         */
+
     }
 }
