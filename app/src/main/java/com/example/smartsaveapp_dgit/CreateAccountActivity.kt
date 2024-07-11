@@ -1,8 +1,6 @@
 package com.example.smartsaveapp_dgit
 
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
@@ -11,9 +9,8 @@ import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
-class Act_7 : AppCompatActivity() {
+class CreateAccountActivity : AppCompatActivity() {
 
     private lateinit var kontoNrEditText: EditText
     private lateinit var blzEditText: EditText
@@ -24,14 +21,12 @@ class Act_7 : AppCompatActivity() {
     private lateinit var checkSparkonto: CheckBox
     private lateinit var checkKreditkarte: CheckBox
     private lateinit var speichernButton: Button
-    private lateinit var abbrechenButton: Button
     private lateinit var database: AppDatabase
     private val uiScope = CoroutineScope(Dispatchers.Main)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.gui_7) // Dein bestehendes Layout
-
+        setContentView(R.layout.gui_7)
         kontoNrEditText = findViewById(R.id.kontoNr)
         blzEditText = findViewById(R.id.blz)
         bicEditText = findViewById(R.id.bic)
@@ -41,7 +36,6 @@ class Act_7 : AppCompatActivity() {
         checkSparkonto = findViewById(R.id.checkSparkonto)
         checkKreditkarte = findViewById(R.id.checkKreditkarte)
         speichernButton = findViewById(R.id.saveButton)
-        abbrechenButton = findViewById(R.id.cancelButton)
 
         database = Room.databaseBuilder(
             applicationContext,
@@ -49,11 +43,11 @@ class Act_7 : AppCompatActivity() {
         ).build()
 
         speichernButton.setOnClickListener {
-            val kontoNr = kontoNrEditText.text.toString().trim()
-            val blz = blzEditText.text.toString().trim()
-            val bic = bicEditText.text.toString().trim()
-            val iban = ibanEditText.text.toString().trim()
-            val bemerkung = bemerkungEditText.text.toString().trim()
+            val kontoNr = kontoNrEditText.text.toString()
+            val blz = blzEditText.text.toString()
+            val bic = bicEditText.text.toString()
+            val iban = ibanEditText.text.toString()
+            val bemerkung = bemerkungEditText.text.toString()
             val kontotyp = when {
                 checkBankkonto.isChecked -> "Bankkonto"
                 checkSparkonto.isChecked -> "Sparkonto"
@@ -61,31 +55,19 @@ class Act_7 : AppCompatActivity() {
                 else -> ""
             }
 
-            // Validierung der Eingabefelder
-            if (kontoNr.isNotEmpty() && blz.isNotEmpty() && bic.isNotEmpty() && iban.isNotEmpty() && kontotyp.isNotEmpty()) {
-                val account = Account(
-                    kontoNr = kontoNr,
-                    blz = blz,
-                    bic = bic,
-                    iban = iban,
-                    bemerkung = bemerkung,
-                    kontotyp = kontotyp
-                )
+            val account = Account(
+                kontoNr = kontoNr,
+                blz = blz,
+                bic = bic,
+                iban = iban,
+                bemerkung = bemerkung,
+                kontotyp = kontotyp
+            )
 
-                uiScope.launch {
-                    withContext(Dispatchers.IO) {
-                        database.accountDao().insert(account)
-                    }
-                    finish()
-                }
-            } else {
-                // Zeige eine Fehlermeldung an, falls ein Feld leer ist
-                Log.e("Act_7", "Fehler: Alle Felder müssen ausgefüllt werden.")
+            uiScope.launch {
+                database.accountDao().insert(account)
+                finish()
             }
-        }
-
-        abbrechenButton.setOnClickListener {
-            finish()
         }
     }
 }
