@@ -63,6 +63,7 @@ dependencies {
     implementation(libs.androidx.fragment.ktx)
     implementation(libs.material)
     implementation(libs.androidx.navigation.fragment)
+    implementation(libs.androidx.media3.common)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

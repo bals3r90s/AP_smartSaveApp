@@ -81,7 +81,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:text="Betrag"
+        android:text="Monatliche Rate"
         android:textSize="25dp"
         app:layout_constraintBottom_toTopOf="@+id/textView10"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
@@ -139,16 +139,16 @@
         app:layout_constraintStart_toStartOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Rennovierung"
-        android:textSize="25dp"
+        android:layout_marginTop="40dp"
+        android:text="Verwendungszweck"
         android:textColor="@color/font_purple"
-        app:layout_constraintBottom_toBottomOf="@+id/textView10"
-        app:layout_constraintEnd_toEndOf="@+id/textView9"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toTopOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.0" />
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView6" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
